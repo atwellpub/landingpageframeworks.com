@@ -1,6 +1,6 @@
 # LandingPageFrameworks.com
 
-[LandingPageFrameworks.com](LandingPageFrameworks.com), a leaderboard of the top frameworks for website developers. Lists include WordPress, Joomla, and SAAS Services, and boilerplates.
+[LandingPageFrameworks.com](LandingPageFrameworks.com), a leaderboard of the top landing page frameworks for website developers. Lists include WordPress Plugins, Joomla Plugins, and SAAS Services, and boilerplates.
 
 ## Why?
 

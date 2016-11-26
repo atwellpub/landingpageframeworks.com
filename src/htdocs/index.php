@@ -7,7 +7,7 @@
     $framework_slug = ! empty($_REQUEST['framework']) ? $_REQUEST['framework'] : '';
     $framework_slug = preg_replace("/[^A-Za-z0-9\\_\\-]/", '', $framework_slug);
 
-    if ( ! file_exists(dirname(__DIR__) . '/frameworks/compiled/' . $framework_slug . '.php'))
+    if ( ! file_exists(dirname(__DIR__) . '/frameworks/' . $framework_slug . '.php'))
         $framework_slug = '';
 
     $title          = 'Top Frameworks for WordPress Plugin & Theme Developers';
@@ -49,7 +49,7 @@
     <!-- Open Graph data -->
     <meta property="og:title" content="<?php echo $og_title ?>"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:image" content="<?php echo SITE_ADDRESS ?>/assets/img/og-includewp.png"/>
+    <meta property="og:image" content="<?php echo SITE_ADDRESS ?>/assets/img/og-landingpageframeworks.png"/>
     <meta property="og:url" content="<?php echo $og_url ?>"/>
     <meta property="og:description" content="<?php echo $og_description ?>"/>
     <meta property="og:locale" content="en_US"/>
@@ -63,7 +63,7 @@
     <meta name="twitter:creator" content="@vovafeldman">
     <meta name="twitter:title" content="<?php echo $og_title ?>">
     <meta name="twitter:description" content="<?php echo $og_description ?>">
-    <meta name="twitter:image:src" content="<?php echo SITE_ADDRESS ?>/assets/img/og-includewp.png">
+    <meta name="twitter:image:src" content="<?php echo SITE_ADDRESS ?>/assets/img/og-landingpageframeworks.png">
 
     <!--    <link rel="canonical" href="--><?php //echo $canonical; ?><!--" />-->
 
@@ -77,8 +77,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <!-- Font Awesome -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-      integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+      crossorigin="anonymous">
 
 <!-- Lato Font -->
 <link href='https://fonts.googleapis.com/css?family=Lato|Pacifico&subset=latin,latin-ext&subset=latin' rel='stylesheet'

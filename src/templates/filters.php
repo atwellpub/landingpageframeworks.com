@@ -1,89 +1,56 @@
 <?php
-    if (empty($framework_slug))
-    {
-        // GitHub data.
-        $sort_by = array(
-            'stars'  => 'star',
-            'forks'  => 'code-fork',
-            'issues' => 'bug',
-        );
-    }
-    else
-    {
-        // WordPress.org data.
-        $sort_by = array(
-            'installs'  => 'heartbeat',
-            'rate'      => 'star',
-            'downloads' => 'download',
-        );
-    }
+if (empty($framework_slug)) {
+    // GitHub data.
+    $sort_by = array(
+        'stars' => 'star',
+        'forks' => 'code-fork',
+        'issues' => 'bug',
+    );
+} else {
+    // WordPress.org data.
+    $sort_by = array(
+        'installs' => 'heartbeat',
+        'rate' => 'star',
+        'downloads' => 'download',
+    );
+}
 
-    reset($sort_by);
-    $default_sort_by = key($sort_by);
+reset($sort_by);
+$default_sort_by = key($sort_by);
 ?>
 <!-- Filters -->
 <div id="filters">
     <div class="placeholder"></div>
 
     <div class="section">
-        <div class="container row valign-wrapper">
-            <div class="col s6 valign">
-                <input type="checkbox" id="show_plugins" checked="checked" class="filled-in checkbox-blue"/>
-                <label for="show_plugins"
-                       class="plugin uppercase">Plugin<?php echo isset($plugins_count) ? " [{$plugins_count}]" : '' ?>
-                    <i class="fa fa-plug plugin"></i></label>
+        <div class="container row valign-wrapper center">
+            <div class="col s12 valign">
+                <input type="checkbox" id="show_wordpress" checked="checked" class="filled-in checkbox-black"/>
+                <label for="show_wordpress"
+                       class="wordpress uppercase">WordPress<?php echo isset($plugins_count) ? " [{$plugins_count}]" : '' ?>
+                    <i class="fa fa-wordpress wordpress"></i></label>
 
-                <input type="checkbox" id="show_themes" checked="checked" class="filled-in checkbox-magenta"/>
-                <label for="show_themes"
-                       class="theme uppercase">Theme<?php echo isset($themes_count) ? " [{$themes_count}]" : '' ?> <i
-                        class="fa fa-paint-brush theme"></i></label>
-            </div>
-            <div class="col s6 right-align">
-                <!-- Dropdown Trigger -->
-                <a id="sortby_trigger" class="dropdown-button btn waves-effect waves-light light-blue" href='#'
-                   data-activates='sortby'>Sorted by
-                    <?php echo $default_sort_by ?> <i class="fa fa-toggle-down"></i></a>
-                <!-- Dropdown Structure -->
-                <ul id="sortby" class='dropdown-content'>
-                    <?php foreach ($sort_by as $metric => $icon) : ?>
-                        <li><a href="#!" data-sort="<?php echo $metric ?>" class="light-blue-text">Sort
-                                by <?php echo $metric ?> <i
-                                    class="fa fa-<?php echo $icon ?>"></i></a>
-                        </li>
-                    <?php endforeach ?>
-                    <li class="divider"></li>
-                    <li><a href="#!" data-sort="name" class="light-blue-text">Sort by name <i
-                                class="fa fa-sort-alpha-asc"></i></a>
-                    </li>
-                </ul>
+                <input type="checkbox" id="show_joomla" checked="checked" class="filled-in checkbox-black"/>
+                <label for="show_joomla"
+                       class="joomla uppercase">Joomla<?php echo isset($joomla_count) ? " [{$joomla_count}]" : '' ?> <i
+                        class="fa fa-joomla joomla"></i></label>
+
+
+                <input type="checkbox" id="show_saas" checked="checked" class="filled-in checkbox-black"/>
+                <label for="show_saas"
+                       class="saas uppercase">SAAS<?php echo isset($saas_count) ? " [{$saas_count}]" : '' ?> <i
+                        class="fa fa-address-book saas"></i></label>
+
+                <input type="checkbox" id="show_boilerplate" checked="checked" class="filled-in checkbox-black"/>
+                <label for="show_boilerplate"
+                       class="boilerplate uppercase">Boilerplate<?php echo isset($boilerplate_count) ? " [{$boilerplate_count}]" : '' ?> <i
+                        class="fa fa-github boilerplate"></i></label>
+
+
             </div>
 
             <script type="text/javascript">
-                var sortItems = function (sortBy, label) {
-                    var $cards = $('.card-container');
 
-                    $cards.sort(function (a, b) {
-                        var an, bn;
-
-                        if ('name' === sortBy) {
-                            an = $(a).find('.card-title').text();
-                            bn = $(b).find('.card-title').text();
-
-                            return an.localeCompare(bn);
-                        }
-
-                        // By details.
-                        an = parseInt($(a).find('.details .' + sortBy + ' span').text().replace(/,/g, ""));
-                        bn = parseInt($(b).find('.details .' + sortBy + ' span').text().replace(/,/g, ""));
-
-                        // Descending sort.
-                        return (an > bn) ? -1 : ((an < bn) ? 1 : 0);
-                    });
-
-                    $cards.detach().appendTo($('#frameworks > .container'));
-
-                    $('#sortby_trigger').html(label)
-                };
 
                 $('#sortby a').on('click', function () {
                     sortItems(
@@ -92,17 +59,29 @@
                     );
                 });
 
-                $('#show_plugins').change(function () {
+                $('#show_wordpress').change(function () {
                     if ($(this).is(':checked'))
-                        $('.card-container.plugins').fadeIn();
+                        $('.card-container.wordpress').fadeIn();
                     else
-                        $('.card-container.plugins:not(.themes)').fadeOut();
+                        $('.card-container.wordpress:not(.joomla)').fadeOut();
                 });
-                $('#show_themes').change(function () {
+                $('#show_joomla').change(function () {
                     if ($(this).is(':checked'))
-                        $('.card-container.themes').fadeIn();
+                        $('.card-container.joomla').fadeIn();
                     else
-                        $('.card-container.themes:not(.plugins)').fadeOut();
+                        $('.card-container.joomla:not(.plugins)').fadeOut();
+                });
+                $('#show_boilerplate').change(function () {
+                    if ($(this).is(':checked'))
+                        $('.card-container.boilerplate').fadeIn();
+                    else
+                        $('.card-container.boilerplate:not(.plugins)').fadeOut();
+                });
+                $('#show_saas').change(function () {
+                    if ($(this).is(':checked'))
+                        $('.card-container.saas').fadeIn();
+                    else
+                        $('.card-container.saas:not(.plugins)').fadeOut();
                 });
             </script>
         </div>

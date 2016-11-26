@@ -257,7 +257,7 @@
     {
         console_log($slug . ' - Fetching framework items from Addendio.');
 
-        $result = file_get_contents("https://includewp.firebaseio.com/{$slug}.json");
+        $result = file_get_contents("https://landingpageframeworks.firebaseio.com/{$slug}.json");
 
         return json_decode($result, true);
     }
@@ -267,22 +267,22 @@
      * item indexes.
      *
      * @param string $framework
-     * @param string $plugins_dir
+     * @param string $wordpress_dir
      * @param string $themes_dir
      */
-    function dump_framework_items($framework, $plugins_dir, $themes_dir)
+    function dump_framework_items($framework, $wordpress_dir, $themes_dir)
     {
         $slug = $framework['slug'];
 
         $framework_plugins_and_themes = get_framework_items($slug);
 
-        if ($framework['is_for_plugins'])
+        if ($framework['category'] == 'wordpress')
         {
             $plugins_index = array();
             $plugins_count = - 1;
-            if (file_exists($plugins_dir . '/' . $slug . '.php'))
+            if (file_exists($wordpress_dir . '/' . $slug . '.php'))
             {
-                require_once $plugins_dir . '/' . $slug . '.php';
+                require_once $wordpress_dir . '/' . $slug . '.php';
                 $plugins_count = count($plugins_index);
             }
 
@@ -306,7 +306,7 @@
                 dump_var_to_php_file(
                     $plugins_index,
                     '$plugins_index',
-                    $plugins_dir . '/' . $slug . '.php',
+                    $wordpress_dir . '/' . $slug . '.php',
                     true
                 );
             }

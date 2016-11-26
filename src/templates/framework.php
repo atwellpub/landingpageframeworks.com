@@ -1,7 +1,7 @@
 <?php
     $framework_plugins = dirname(dirname(__DIR__)) . "/src/plugins/compiled/{$framework_slug}.php";
     $framework_themes  = dirname(dirname(__DIR__)) . "/src/themes/compiled/{$framework_slug}.php";
-    $framework_url     = "https://includewp.com/{$framework_slug}/";
+    $framework_url     = "https://landingpageframeworks.com/{$framework_slug}/";
 
     if (file_exists($framework_plugins))
         require_once $framework_plugins;

@@ -7,97 +7,97 @@
 
     $framework_files = glob(dirname(__DIR__) . '/src/frameworks/*.php');
 
-    if (true)
-    {
-        #region Frameworks update -----------------------------------------------------------
 
-        $framework_files_output = dirname(__DIR__) . '/src/frameworks/compiled/';
-        $plugins_dir            = dirname(__DIR__) . '/src/plugins/';
-        $themes_dir             = dirname(__DIR__) . '/src/themes/';
-        $index_path             = $framework_files_output . '_index.php';
-        $updates_index_path     = $framework_files_output . '_updates.php';
+    #region Frameworks update -----------------------------------------------------------
 
-        $frameworks_index   = array();
-        $frameworks_updates = array();
+    $framework_files_output = dirname(__DIR__) . '/src/frameworks/compiled/';
+    $plugins_dir            = dirname(__DIR__) . '/src/plugins/';
+    $themes_dir             = dirname(__DIR__) . '/src/themes/';
+    $index_path             = $framework_files_output . '_index.php';
+    $updates_index_path     = $framework_files_output . '_updates.php';
 
-        if (file_exists($updates_index_path))
-            require_once $updates_index_path;
+    $frameworks_index   = array();
+    $frameworks_updates = array();
 
-        $is_updated = false;
-
-        foreach ($framework_files as $key => $file)
-        {
-            $file = canonize_file_path($file);
-
-            $slug           = substr($file, strrpos($file, '/') + 1, - 4);
-            $framework_path = $framework_files_output . substr($file, strrpos($file, '/') + 1);
-
-            console_log($slug . ' - Starting to handle framework.');
-
-            // Fetch data only if last cached more than a week ago.
-            if (isset($frameworks_updates[$slug]) &&
-                $frameworks_updates[$slug] >= (time() - WEEK_IN_SEC) &&
-                file_exists($framework_path)
-            )
-            {
-                console_log($slug . ' - Framework cache file is still valid (weekly refresh).');
-
-                // Get framework cached data.
-                require_once $framework_path;
-            }
-            else
-            {
-                // Get framework data.
-                require_once $file;
-
-                // Get slug from filename.
-                $framework['slug'] = $slug;
-
-                // Enrich with GitHub info.
-                if (isset($framework['github_repo']))
-                    enrich_with_github($framework);
-
-                // Enrich with WordPress.org info.
-                if (isset($framework['wp_slug']))
-                    enrich_with_wp($framework);
-
-                if ( ! isset($framework['banner']))
-                    enrich_banner($framework);
-
-                // Add banner protocol if missing before running via CDN.
-                if ('/' === $framework['banner'][0])
-                    $framework['banner'] = 'http:' . $framework['banner'];
-
-                // Add images CDN proxy.
-                $framework['banner'] = 'https://res.cloudinary.com/freemius/image/fetch/' . $framework['banner'];
-
-                dump_var_to_php_file($framework, '$framework', $framework_path);
-
-                $frameworks_updates[$slug] = time();
-
-                // Fetch framework's themes and plugin slugs.
-                dump_framework_items($framework, $plugins_dir, $themes_dir);
-
-                $is_updated = true;
-            }
-
-            $frameworks_index[$slug] = $framework['github']['stars'];
-        }
-
-        if ($is_updated)
-        {
-            // Sort frameworks by stars.
-            arsort($frameworks_index);
-
-            // Dump index.
-            dump_var_to_php_file($frameworks_index, '$frameworks_index', $index_path);
-
-            // Dump framework update timestamp.
-            dump_var_to_php_file($frameworks_updates, '$frameworks_updates', $updates_index_path);
-        }
-
-        #endregion Frameworks update -----------------------------------------------------------
+    if (file_exists($updates_index_path)) {
+        require_once $updates_index_path;
     }
+
+    $is_updated = false;
+
+    foreach ($framework_files as $key => $file)
+    {
+        $file = canonize_file_path($file);
+
+        $slug           = substr($file, strrpos($file, '/') + 1, - 4);
+        $framework_path = $framework_files_output . substr($file, strrpos($file, '/') + 1);
+
+        console_log($slug . ' - Starting to handle framework.');
+
+        // Fetch data only if last cached more than a week ago.
+        if (isset($frameworks_updates[$slug]) &&
+            $frameworks_updates[$slug] >= (time() - WEEK_IN_SEC) &&
+            file_exists($framework_path)
+        )
+        {
+            console_log($slug . ' - Framework cache file is still valid (weekly refresh).');
+
+            // Get framework cached data.
+            require_once $framework_path;
+        }
+        else
+        {
+            // Get framework data.
+            require_once $file;
+
+            // Get slug from filename.
+            $framework['slug'] = $slug;
+
+            // Enrich with GitHub info.
+            if (isset($framework['github_repo']))
+                enrich_with_github($framework);
+
+            // Enrich with WordPress.org info.
+            if (isset($framework['wp_slug']))
+                enrich_with_wp($framework);
+
+            if ( ! isset($framework['banner']))
+                enrich_banner($framework);
+
+            // Add banner protocol if missing before running via CDN.
+            if ('/' === $framework['banner'][0])
+                $framework['banner'] = 'http:' . $framework['banner'];
+
+            // Add images CDN proxy.
+            $framework['banner'] = 'https://res.cloudinary.com/freemius/image/fetch/' . $framework['banner'];
+
+            dump_var_to_php_file($framework, '$framework', $framework_path);
+
+            $frameworks_updates[$slug] = time();
+
+            // Fetch framework's themes and plugin slugs.
+            dump_framework_items($framework, $plugins_dir, $themes_dir);
+
+            $is_updated = true;
+        }
+
+        $frameworks_index[$slug] = $framework['github']['stars'];
+    }
+
+    if ($is_updated)
+    {
+        // Sort frameworks by stars.
+        arsort($frameworks_index);
+
+        // Dump index.
+        dump_var_to_php_file($frameworks_index, '$frameworks_index', $index_path);
+
+        // Dump framework update timestamp.
+        dump_var_to_php_file($frameworks_updates, '$frameworks_updates', $updates_index_path);
+    }
+
+    #endregion Frameworks update -----------------------------------------------------------
+
 
     if (true)
     {
@@ -266,7 +266,7 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <url>
-        <loc>https://includewp.com/</loc>
+        <loc>https://landingpageframeworks.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -278,7 +278,7 @@ EOT;
 
             $sitemap .= <<<EOT
     <url>
-        <loc>https://includewp.com/{$slug}/</loc>
+        <loc>https://landingpageframeworks.com/{$slug}/</loc>
         <changefreq>weekly</changefreq>
         <priority>1</priority>
     </url>

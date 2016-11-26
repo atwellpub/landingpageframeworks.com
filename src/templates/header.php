@@ -13,10 +13,10 @@
 
             <li class="divider"></li>
             <li><a class="whatsapp"
-                   href="whatsapp://send?text=<?php echo urlencode('Hey, check out IncludeWP - ' . SITE_ADDRESS) ?>">Send
+                   href="whatsapp://send?text=<?php echo urlencode('Hey, check out LandingPageFramworks.com - ' . SITE_ADDRESS) ?>">Send
                     <i class="fa fa-fw fa-whatsapp"></i></a></li>
             <li><a class="email"
-                   href="mailto:?subject=<?php echo rawurlencode('Top Frameworks for WordPress plugin & theme developers') ?>&body=<?php echo rawurlencode("Hey, check out IncludeWP:\n" . SITE_ADDRESS) ?>">Email
+                   href="mailto:?subject=<?php echo rawurlencode('Top Landing Page Frameworks for website developers') ?>&body=<?php echo rawurlencode("Hey, check out LandingPageFrameworks.com:\n" . SITE_ADDRESS) ?>">Email
                     <i
                         class="fa fa-fw fa-envelope"></i></a></li>
         </ul>
@@ -24,16 +24,14 @@
         <div class="nav-wrapper container">
             <!--            <a href="/" class="brand-logo logo medium-center small-right"><h1 class="logo"><i class="fa fa-terminal"></i> IncludeWP</h1></a>-->
             <ul class="left">
-                <li><a href="https://github.com/Freemius/IncludeWP/fork" target="_blank"><i
-                            class="fa fa-github left"></i> Fork me on GitHub</a>
                 <li><a class="dropdown-button" href="#!" data-activates="sharing" data-constrainwidth="false"><i
                             class="fa fa-share left"></i> Share</a></li>
             </ul>
 
             <ul class="right">
-                <li><a href="https://github.com/Freemius/IncludeWP/"><i
+                <li><a href="https://github.com/atwellpub/landingpageframeworks.com"><i
                             class="fa fa-info left"></i> About</a></li>
-                <li><a href="https://github.com/Freemius/IncludeWP/"><i
+                <li><a href="https://github.com/atwellpub/landingpageframeworks.com"><i
                             class="fa fa-plus left"></i> Add framework</a></li>
             </ul>
         </div>
