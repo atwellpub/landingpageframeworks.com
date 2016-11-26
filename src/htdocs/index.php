@@ -1,8 +1,8 @@
 <?php
     require_once dirname(dirname(__DIR__)) . '/includes/config.php';
 
-    define('NAME', 'IncludeWP');
-    define('SITE_ADDRESS', 'https://includewp.com');
+    define('NAME', 'Landing Page Frameworks');
+    define('SITE_ADDRESS', 'http://inboundsoon.dev/wp-content/frameworks/src/htdocs/');
 
     $framework_slug = ! empty($_REQUEST['framework']) ? $_REQUEST['framework'] : '';
     $framework_slug = preg_replace("/[^A-Za-z0-9\\_\\-]/", '', $framework_slug);
@@ -11,7 +11,7 @@
         $framework_slug = '';
 
     $title          = 'Top Frameworks for WordPress Plugin & Theme Developers';
-    $og_title       = 'IncludeWP';
+    $og_title       = '';
     $og_url         = SITE_ADDRESS;
     $og_description = 'IncludeWP is a leaderboard of the top open-source frameworks for WordPress plugin & theme developers. Because code reusability is awesome.';
     if ( ! empty($framework_slug))
@@ -90,9 +90,10 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 
-<?php require_once TEMPLATES_DIR . 'header.php' ?>
+<?php
+require_once TEMPLATES_DIR . 'header.php' ?>
 
 <?php require_once TEMPLATES_DIR . 'cover.php' ?>
 

@@ -1,8 +1,8 @@
 <?php
 	// API Keys
-    define('PAGE_2_IMAGES_REST_KEY', 'YOUR_P2I_REST_KEY');
-    define('PAGE_2_IMAGES_KEY',      'YOUR_P2I_KEY');
-    define('GITHUB_ACCESS_TOKEN',    'YOUR_GITHUB_ACCESS_TOKEN');
+    define('PAGE_2_IMAGES_REST_KEY', '867c29f21f9d648c');
+    define('PAGE_2_IMAGES_KEY',      '3768e31195b8e9e8');
+    define('GITHUB_ACCESS_TOKEN',    '27fbfe0582e34853e2a733102d3d58beb3656fc2 ');
     
     // Tracking
     define('GA_ACCOUNT_ID',     'YOUR_GOOGLE_ANALYTICS_ID');

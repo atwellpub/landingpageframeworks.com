@@ -8,12 +8,12 @@
 @import "footer";
 
 body {
-    background: url('/assets/img/bkg-pattern.png') repeat;
+    background: url('assets/img/bkg-pattern.png') repeat;
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 a:not(.btn):hover {
-    border-bottom: 1px dashed #039be5;
+    border-bottom: 1px dashed gold;
 }
 
 .logo {

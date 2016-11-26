@@ -3,7 +3,7 @@
     <div class="section cta">
         <div class="container center">
             <a href="https://freemius.com?utm_source=includewp_home&utm_medium=bot_wappu&utm_content=footer&utm_campaign=includewp"><img
-                    class="bot" src="/assets/img/freemius-freebo-bot-wappu.svg"
+                    class="bot" src="assets/img/freemius-freebo-bot-wappu.svg"
                     alt="Freemius Freebo and Wappu"/></a>
             <br>
             <br>
