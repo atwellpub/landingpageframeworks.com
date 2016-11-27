@@ -2,7 +2,7 @@
 	// API Keys
     define('PAGE_2_IMAGES_REST_KEY', '867c29f21f9d648c');
     define('PAGE_2_IMAGES_KEY',      '3768e31195b8e9e8');
-    define('GITHUB_ACCESS_TOKEN',    '27fbfe0582e34853e2a733102d3d58beb3656fc2 ');
+    define('GITHUB_ACCESS_TOKEN',    '0e13b06c2dd8a9a180dfabcd6ec628de082e3263');
     
     // Tracking
     define('GA_ACCOUNT_ID',     'YOUR_GOOGLE_ANALYTICS_ID');
