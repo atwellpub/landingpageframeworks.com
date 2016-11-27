@@ -3,3 +3,4 @@ src/frameworks/compiled/**
 src/plugins/compiled/**
 sitemap.xml
 .idea
+includes/config.php
