@@ -10,10 +10,10 @@
     if ( ! file_exists(dirname(__DIR__) . '/frameworks/' . $framework_slug . '.php'))
         $framework_slug = '';
 
-    $title          = 'Top Frameworks for WordPress Plugin & Theme Developers';
+    $title          = 'Top Frameworks for Building Landing Pages';
     $og_title       = '';
     $og_url         = SITE_ADDRESS;
-    $og_description = 'IncludeWP is a leaderboard of the top open-source frameworks for WordPress plugin & theme developers. Because code reusability is awesome.';
+    $og_description = 'LandingPageFrameworks.com, a leaderboard of the top landing page frameworks for website developers. Lists include WordPress Plugins, Joomla Plugins, and SAAS Services, and boilerplates.';
     if ( ! empty($framework_slug))
     {
         include dirname(__DIR__) . '/frameworks/compiled/' . $framework_slug . '.php';
