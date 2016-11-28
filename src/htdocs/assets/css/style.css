@@ -85,7 +85,7 @@ h2 {
 
 #cover h1 {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    color: #039be5
+    color: gold
 }
 
 #cover .powered-by {
@@ -293,7 +293,7 @@ h2 {
 }
 
 .card.small {
-    height: 380px
+    height: 441px
 }
 
 .card .card-image .image-container {
