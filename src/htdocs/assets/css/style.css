@@ -293,7 +293,7 @@ h2 {
 }
 
 .card.small {
-    height: 320px
+    height: 380px
 }
 
 .card .card-image .image-container {
@@ -381,6 +381,14 @@ h2 {
     text-transform: none !important
 }
 
+.card .card-action .fa {
+    padding-right:3px;
+}
+
+.card .card-action div {
+    margin-bottom:5px;
+}
+
 .card .card-action a i.fa {
     font-size: 1.3em
 }
@@ -412,7 +420,7 @@ h2 {
 }
 
 body {
-    background: url("assets/img/bkg-pattern.png") repeat;
+    background: url("../img/bkg-pattern.png") repeat;
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
 

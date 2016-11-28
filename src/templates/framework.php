@@ -1,10 +1,10 @@
 <?php
-    $framework_plugins = dirname(dirname(__DIR__)) . "/src/plugins/compiled/{$framework_slug}.php";
-    $framework_themes  = dirname(dirname(__DIR__)) . "/src/themes/compiled/{$framework_slug}.php";
-    $framework_url     = "https://landingpageframeworks.com/{$framework_slug}/";
 
-    if (file_exists($framework_plugins))
-        require_once $framework_plugins;
+   $frameworks = dirname(dirname(__DIR__)) . "/src/frameworks/compiled/{$framework_slug}.php";
+   $framework_url     = "https://landingpageframeworks.com/{$framework_slug}/";
+
+    if (file_exists($frameworks))
+        require_once $frameworks;
     if (file_exists($framework_themes))
         require_once $framework_themes;
 
@@ -61,7 +61,7 @@
         <p><?php echo $framework['description'] ?></p>
 
         <div class="row">
-            <?php if ($has_wp_repo) : ?>
+            <?php if (isset($framework['wp_slug']) && $framework['wp_slug']) : ?>
                 <div class="col s4">
                     <nobr><a class="wordpress"
                              href="https://wordpress.org/plugins/<?php echo trim($framework['wp_slug'], '/') ?>/"
