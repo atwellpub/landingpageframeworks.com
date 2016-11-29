@@ -9,7 +9,9 @@ Because we believe we should have a crowd sourced catalog of available options.
 ## Contributing
 
 Missing a framework here? Just fork the repo and add your framework
-as a `{name}.php` in the `src/frameworks` folder. Be sure to add an image that is somewhere along the lines of 400px x 150px into /src/htdocs/assets/img/banners/
+as a `{name}.php` in the `src/frameworks` folder.
+
+Also be sure to add an image that is somewhere along the lines of 400px x 150px into /src/htdocs/assets/img/banners/
 
 ## Framework parameters explained
 
