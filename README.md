@@ -13,7 +13,7 @@ as a `{name}.php` in the `src/frameworks` folder. Be sure to add an image that i
 
 ## Framework parameters explained
 
-```
+`
  $framework = array(
         'category'       => '', /* accepts wordpress,joomla,saas,boilerplate, or course */
         'name'           => '', /* permalink friendly name */
@@ -34,8 +34,8 @@ as a `{name}.php` in the `src/frameworks` folder. Be sure to add an image that i
         'googleplus'       => '', /* link to google plus account if applicable */
         'banner' => 'assets/img/banners/yourimageassethere.png' /* relative path to frameworks/src/htdocs/assets/img/banners/ image that you will commit to the repo */
     );
-    ```
+`
 
 ## LandingPageFrameworks.com
 
-LandingPageFrameworks.com is powered by a IncludeWP.com boilerplate developed and maintained with ❤ by [Freemius](https://freemius.com).
+LandingPageFrameworks.com is powered by IncludeWP.com's boilerplate developed and maintained with ❤ by [Freemius](https://freemius.com).

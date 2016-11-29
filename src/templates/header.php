@@ -22,7 +22,7 @@
         </ul>
 
         <div class="nav-wrapper container">
-            <!--            <a href="/" class="brand-logo logo medium-center small-right"><h1 class="logo"><i class="fa fa-terminal"></i> IncludeWP</h1></a>-->
+
             <ul class="left">
                 <li><a class="dropdown-button" href="#!" data-activates="sharing" data-constrainwidth="false"><i
                             class="fa fa-share left"></i> Share</a></li>

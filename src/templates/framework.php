@@ -81,24 +81,6 @@
         </div>
 
         <blockquote>
-            <?php if ($is_empty_result) : ?>
-                <?php $item_label = ! $framework['is_for_themes'] ?
-                    'plugins' :
-                    (! $framework['is_for_plugins'] ? 'themes' : 'plugins or themes') ?>
-                <p>
-                    <?php if ($framework['is_for_themes'] && ! $framework['is_for_plugins']) : ?>
-                        Oops... We couldn't find any theme using the framework on WordPress.org. If your theme is listed on WordPress.org and you can't find it here - please
-                        <a href="https://github.com/Freemius/IncludeWP/issues/new" target="_blank">open an issue on our
-                            GitHub
-                            repo</a>. In the ticket, provide the theme's .org URL and the path of the framework in your theme.
-                    <?php else : ?>
-                        Oops... We couldn't find any <?php echo $item_label ?> using the framework on WordPress.org. Our current identification mechanism is not (yet) supporting recognition of <?php echo $item_label ?> that include the framework using TGM. If your product is listed on WordPress.org, not using TGM, and you can't find it here - please
-                        <a href="https://github.com/Freemius/IncludeWP/issues/new" target="_blank">open an issue on our
-                            GitHub
-                            repo</a>. In the ticket, provide the items .org URL and the path of the framework in your product.
-                    <?php endif ?>
-                </p>
-            <?php else : ?>
                 <a href="https://twitter.com/home?status=<?php echo urlencode($tweet . " $framework_url") ?>"
                    target="_blank"><i class="fa fa-twitter"></i> <?php echo $tweet ?></a>
                 <span class="tweet-button"><a href="https://twitter.com/share" class="twitter-share-button"
@@ -106,7 +88,6 @@
                                               data-url="<?php echo $framework_url ?>"
                                               data-size="large"
                                               data-count="none">Tweet</a></span>
-            <?php endif ?>
         </blockquote>
         <?php if ( ! $is_empty_result) : ?>
             <script type="text/javascript">!function (d, s, id) {

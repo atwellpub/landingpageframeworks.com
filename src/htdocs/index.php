@@ -42,7 +42,7 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
-    <title><?php echo $title ?> &ndash; IncludeWP</title>
+    <title><?php echo $title ?> </title>
 
     <meta name="description" content="<?php echo $og_description ?>"/>
 
@@ -53,14 +53,14 @@
     <meta property="og:url" content="<?php echo $og_url ?>"/>
     <meta property="og:description" content="<?php echo $og_description ?>"/>
     <meta property="og:locale" content="en_US"/>
-    <meta property="og:site_name" content="IncludeWP"/>
-    <meta property="fb:admins" content="598827889"/>
-    <meta property="fb:app_id" content="132877816722342"/>
+    <meta property="og:site_name" content="LandingPageFrameworks.com"/>
+    <meta property="fb:admins" content=""/>
+    <meta property="fb:app_id" content=""/>
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@freemius">
-    <meta name="twitter:creator" content="@vovafeldman">
+    <meta name="twitter:site" content="@inboundwp">
+    <meta name="twitter:creator" content="@atwellpub">
     <meta name="twitter:title" content="<?php echo $og_title ?>">
     <meta name="twitter:description" content="<?php echo $og_description ?>">
     <meta name="twitter:image:src" content="<?php echo SITE_ADDRESS ?>/assets/img/og-landingpageframeworks.png">
