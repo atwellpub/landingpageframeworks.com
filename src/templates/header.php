@@ -2,7 +2,7 @@
     <nav>
         <ul id="sharing" class="dropdown-content">
             <li><a class="twitter" target="_blank"
-                   href="https://twitter.com/intent/tweet?text=<?php echo urlencode('IncludeWP is a leaderboard of the top #frameworks for #WordPress #plugin & #theme devs. Code reusability is awesome!') ?>&url=<?php echo SITE_ADDRESS ?>">Tweet
+                   href="https://twitter.com/intent/tweet?text=<?php echo urlencode('LandingPageFrameworks.com is a leaderboard of the top landing page builders on the web.') ?>&url=<?php echo SITE_ADDRESS ?>">Tweet
                     <i class="fa fa-fw fa-twitter"></i></a></li>
 
             <li><a class="facebook" href="https://www.facebook.com/sharer.php?u=<?php echo SITE_ADDRESS ?>">Share <i

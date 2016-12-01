@@ -41,8 +41,6 @@ foreach ($framework_files as $key => $file) {
 }
 
 
-// Sort frameworks by stars.
-arsort($frameworks_index);
 // Dump index.
 dump_var_to_php_file($frameworks_index, '$frameworks_index', $index_file);
 

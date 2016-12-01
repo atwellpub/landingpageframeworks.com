@@ -30,56 +30,57 @@
         }
     }
 
-    $counter = ($total_active > 100000) ?
-        number_format($total_active) . '+ active installs' :
-        number_format($total_downloads) . ' downloads';
-
-    if ($total_active > 100000)
-    {
-        //    #Freemius framework powers 2,000,000+ websites a/ used by 38 #plugins on #WordPress.org.
-        $tweet = $framework['name'] . ' framework powers ' . number_format($total_active) . '+ websites and is used by ' .
-                 ($plugins_count > 0 ? number_format($plugins_count) . ' #plugins' : '') .
-                 ($themes_count > 0 ? ($plugins_count > 0 ? ' & ' : '') . number_format($themes_count) . ' #themes' : '') .
-                 ' on #WordPress.org.';
-    }
-    else
-    {
-        //    #Freemius framework is used by 38 #plugins on #WordPress.org & 54 #themes with 2,000,000 downloads.
-        $tweet = $framework['name'] . ' framework is used by ' .
-                 ($plugins_count > 0 ? number_format($plugins_count) . ' #plugins' : '') .
-                 ($themes_count > 0 ? ($plugins_count > 0 ? ' & ' : '') . number_format($themes_count) . ' #themes' : '') .
-                 ' on #WordPress.org with ' . $counter . '.';
-    }
+    $tweet = "Check out the " . $framework['name'] . " landing page builder. - " .$framework_url;
 
     $is_empty_result = (0 === ($plugins_count + $themes_count));
 ?>
+<style>
+    body #cover {
+        display:none;
+    }
+</style>
 <section id="framework" class="section">
-    <div id="focus"></div>
-    <div class="container row">
+    <div id="focus">
+</div>
+    <div class="container row" >
+        <center>
+        <img src="../<?php echo $framework['banner']; ?>">
         <h1><?php echo $framework_name ?></h1>
 
-        <p><?php echo $framework['description'] ?></p>
+        <p><?php echo $framework['short_description'] ?></p>
+        <p><?php echo $framework['long_description'] ?></p>
 
         <div class="row">
             <?php if (isset($framework['wp_slug']) && $framework['wp_slug']) : ?>
                 <div class="col s4">
                     <nobr><a class="wordpress"
                              href="https://wordpress.org/plugins/<?php echo trim($framework['wp_slug'], '/') ?>/"
-                             target="_blank" title="WordPress.org"><i class="fa fa-wordpress"></i> WP.org</a></nobr>
+                             target="_blank" title="WordPress.org"><i class="fa fa-wordpress"></i></a></nobr>
                 </div>
             <?php endif ?>
+
+            <?php if (isset($framework['github_repo']) && $framework['github_repo']) : ?>
             <div class="col">
-                <nobr><a class="github" href="https://github.com/<?php echo trim($framework['github_repo'], '/') ?>/"
+                <nobr><a class="github" href="<?php echo trim($framework['github_repo'], '/') ?>/"
                          target="_blank" title="GitHub"><i class="fa fa-github"></i>
-                        https://github.com/<?php echo trim($framework['github_repo'], '/') ?>/</a></nobr>
+                        <?php echo trim($framework['github_repo'], '/') ?>/</a></nobr>
             </div>
+            <?php endif ?>
+
             <div class="col">
                 <nobr><a class="homepage" href="<?php echo trim($framework['homepage'], '/') ?>/" target="_blank"
-                         title="Homepage"><i class="fa fa-home"></i> <?php echo trim($framework['homepage'], '/') ?>
-                        /</a></nobr>
+                         title="Homepage"><i class="fa fa-home"></i></a></nobr>
             </div>
-        </div>
 
+            <?php if (isset($framework['twitter']) && $framework['twitter']) : ?>
+                <div class="col">
+                    <nobr><a class="twitter"
+                             href="<?php echo trim($framework['twitter'], '/') ?>/"
+                             target="_blank" title="Twitter.com"><i class="fa fa-twitter"></i></a></nobr>
+                </div>
+            <?php endif ?>
+        </div>
+        </center>
         <blockquote>
                 <a href="https://twitter.com/home?status=<?php echo urlencode($tweet . " $framework_url") ?>"
                    target="_blank"><i class="fa fa-twitter"></i> <?php echo $tweet ?></a>
@@ -101,6 +102,11 @@
                 }(document, "script", "twitter-wjs");</script>
         <?php endif ?>
     </div>
+    <div class="container row" style="">
+        <center>
+            <a href="<?PHP echo SITE_ADDRESS; ?>" title="top landing page builders">[ View More Builders ] </a>
+        </center>
+    </div>
 </section>
 
 <?php if ( ! $is_empty_result) : ?>
@@ -109,9 +115,4 @@
     <?php require dirname(__DIR__) . '/templates/framework-products.php' ?>
 <?php endif ?>
 
-<script type="text/javascript">
-    sortItems(
-        'installs',
-        $('#sortby li:first-of-type a').html().replace('Sort', 'Sorted')
-    );
-</script>
+

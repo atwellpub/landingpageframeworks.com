@@ -2,7 +2,7 @@
     require_once dirname(dirname(__DIR__)) . '/includes/config.php';
 
     define('NAME', 'Landing Page Frameworks');
-    define('SITE_ADDRESS', 'http://inboundsoon.dev/wp-content/frameworks/src/htdocs/');
+    define('SITE_ADDRESS', 'http://www.landingpageframeworks.com');
 
     $framework_slug = ! empty($_REQUEST['framework']) ? $_REQUEST['framework'] : '';
     $framework_slug = preg_replace("/[^A-Za-z0-9\\_\\-]/", '', $framework_slug);

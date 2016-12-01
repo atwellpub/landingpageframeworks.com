@@ -14,6 +14,10 @@
         <?php //echo $framework['name'] ?><!--</a></span>-->
 
     </div>
+    <div class="card-category">
+        <!-- Short Desc -->
+        <span><?php echo $framework['category'] ?></span>
+    </div>
     <div class="card-content">
         <!-- Short Desc -->
         <p><?php echo $framework['short_description'] ?></p>
@@ -125,7 +129,7 @@
             ?>
             <div class="col <?php echo $col_width ?>">
                 <nobr><a class="twitter" href="<?php echo trim($framework['twitter'], '/') ?>/"
-                         target="_blank" title="GitHub"><i class="fa fa-twitter"></i> twitter</a></nobr>
+                         target="_blank" title="GitHub"><i class="fa fa-twitter"></i> Twitter</a></nobr>
             </div>
             <?php
         endif;
