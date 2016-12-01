@@ -15,7 +15,7 @@
         'instagram'       => '',
         'pinterest'       => '',
         'twitter'       => '',
-        'category'       => 'joomla', /* accepts wordpress,joomla,saas,boilerplate, course */
+        'category'       => 'joomla', /* accepts wordpress,joomla,third_party,boilerplate, course */
         'banner' => 'assets/img/banners/geek-landing-page.jpg',
 
     );

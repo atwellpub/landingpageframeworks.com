@@ -18,7 +18,7 @@ With affordable, 1-time pricing (no monthly fees) and a an intuitive user interf
         'instagram'       => '',
         'pinterest'       => '',
         'twitter'       => '', /* full url */
-        'category'       => 'joomla', /* accepts wordpress,joomla,saas,boilerplate, course */
+        'category'       => 'joomla', /* accepts wordpress,joomla,third_party,boilerplate, course */
         'banner' => 'assets/img/banners/jinbound.jpg',
 
     );

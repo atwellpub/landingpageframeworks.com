@@ -36,10 +36,10 @@ $default_sort_by = key($sort_by);
                         class="fa fa-joomla joomla"></i></label>
 
 
-                <input type="checkbox" id="show_saas" checked="checked" class="filled-in checkbox-black"/>
-                <label for="show_saas"
-                       class="saas uppercase">SAAS<?php echo isset($saas_count) ? " [{$saas_count}]" : '' ?> <i
-                        class="fa fa-address-book saas"></i></label>
+                <input type="checkbox" id="show_third_party" checked="checked" class="filled-in checkbox-black"/>
+                <label for="show_third_party"
+                       class="third_party uppercase">Third Party<?php echo isset($third_party_count) ? " [{$third_party_count}]" : '' ?> <i
+                        class="fa fa-address-book third_party"></i></label>
 
                 <input type="checkbox" id="show_boilerplate" checked="checked" class="filled-in checkbox-black"/>
                 <label for="show_boilerplate"
@@ -77,11 +77,11 @@ $default_sort_by = key($sort_by);
                     else
                         $('.card-container.boilerplate:not(.plugins)').fadeOut();
                 });
-                $('#show_saas').change(function () {
+                $('#show_third_party').change(function () {
                     if ($(this).is(':checked'))
-                        $('.card-container.saas').fadeIn();
+                        $('.card-container.third_party').fadeIn();
                     else
-                        $('.card-container.saas:not(.plugins)').fadeOut();
+                        $('.card-container.third_party:not(.plugins)').fadeOut();
                 });
             </script>
         </div>

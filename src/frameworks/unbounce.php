@@ -15,7 +15,7 @@
         'github_repo'    => '',
         'twitter'       => 'https://twitter.com/unbounce', /* full url */
         'facebook'       => 'https://www.facebook.com/unbounce/', /* full url */
-        'category'       => 'saas', /* accepts wordpress,joomla,saas,boilerplate, course */
+        'category'       => 'third_party', /* accepts wordpress,joomla,third_party,boilerplate, course */
         'banner' => 'assets/img/banners/unbounce.png' /* be sure to commit this asset to frameworks/src/htdocs/assets/img/banners/ */
 
     );

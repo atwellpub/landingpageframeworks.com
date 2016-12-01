@@ -16,7 +16,7 @@
         'twitter'       => 'https://twitter.com/Designmodo', /* full url */
         'facebook'       => 'https://www.facebook.com/designmodo/', /* full url */
         'googleplus'       => '', /* full url */
-        'category'       => 'saas', /* accepts wordpress,joomla,saas,boilerplate, course */
+        'category'       => 'third_party', /* accepts wordpress,joomla,third_party,boilerplate, course */
         'banner' => 'assets/img/banners/designmodo.png' /* be sure to commit this asset to frameworks/src/htdocs/assets/img/banners/ */
 
     );

@@ -15,7 +15,7 @@
         'instagram'       => 'https://instagram.com/inboundnow',
         'pinterest'       => 'https://pinterest.com/inboundnow',
         'twitter'       => 'http://www.twitter.com/inboundnow',
-        'category'       => 'wordpress', /* accepts wordpress,joomla,saas,boilerplate */
+        'category'       => 'wordpress', /* accepts wordpress,joomla,third_party,boilerplate */
         'banner' => 'assets/img/banners/inboundnow.jpg',
 
     );

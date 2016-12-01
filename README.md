@@ -19,7 +19,7 @@ Also be sure to add an image that is somewhere along the lines of 400px x 150px 
  $framework = array(
         'category'       => '', /* accepts wordpress,joomla,saas,boilerplate, or course */
         'name'           => '', /* permalink friendly name */
-        'full_name'      => 'Designmodo - Startup', /* display name */
+        'full_name'      => '', /* display name used on id card and focus page*/
         'short_description'    => '', /* short description used for the id card */
         'long_description'    => '', /* long description used for a focus page */
         'github_repo'    => '', /* link to repo if open source */
